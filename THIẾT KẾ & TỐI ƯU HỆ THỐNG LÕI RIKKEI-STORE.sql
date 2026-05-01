@@ -149,7 +149,7 @@ GROUP BY product_id;
 -- Tìm sản phẩm có tổng số lượng bán lớn nhất.
 SELECT 
 	p.product_name,
-	SUM(od.total_price) AS total_price
+	SUM(od.quantity_total) AS quantity_total
 FROM order_detail od
 INNER JOIN products p
 ON od.product_id = p.product_id
@@ -253,7 +253,8 @@ SELECT
 FROM order_detail od
 INNER JOIN products p
 ON od.product_id = p.product_id
-ORDER BY quantity_total DESC, od.product_id ASC;
+ORDER BY quantity_total DESC, od.product_id ASC
+LIMIT 3;
 
 -- Tìm users chưa từng đặt bất kỳ đơn hàng nào.
 SELECT 
