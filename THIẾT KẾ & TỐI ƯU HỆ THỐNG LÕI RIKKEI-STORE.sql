@@ -154,7 +154,7 @@ FROM order_detail od
 INNER JOIN products p
 ON od.product_id = p.product_id
 GROUP BY product_name
-ORDER BY total_price DESC
+ORDER BY quantity_total DESC
 LIMIT 1;
 
 -- Q7
@@ -225,7 +225,7 @@ SELECT
     SUM(total_price) AS total_price
 FROM order_detail
 GROUP BY order_id
-ORDER BY order_total DESC
+ORDER BY total_price DESC
 LIMIT 1;
 
 -- Tìm category có tổng doanh thu cao nhất.
